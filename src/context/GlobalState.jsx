@@ -2,7 +2,7 @@ import React, {createContext, useReducer, useEffect} from "react"
 import AppReducer from './AppReducer'
 
 //Estado Inicial
-const inicialState = {
+const initialState = {
     movimientos: [],
     loading: true,
     error: null
@@ -82,7 +82,7 @@ export const GlobalProvider = ({children}) => {
         }
     }
 
-    return(<GloBalContext.Provider value = {{
+    return(<GlobalContext.Provider value = {{
         movimientos: state.movimientos,
         loading: state.loading,
         error: state.error,
@@ -90,5 +90,5 @@ export const GlobalProvider = ({children}) => {
         addMovimiento
     }}>
         {children}
-    </GloBalContext.Provider>)
+    </GlobalContext.Provider>)
 }
