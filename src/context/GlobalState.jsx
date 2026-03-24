@@ -47,9 +47,9 @@ export const GlobalProvider = ({children}) => {
             const response = await fetch (`${API_URL}`, {
                 method: 'POST',
                 headers: {
-                    'content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
-                body : JSON.stringify(movimiento)
+                body: JSON.stringify(movimiento)
             })
             
             const data = await response.json()
@@ -87,7 +87,7 @@ export const GlobalProvider = ({children}) => {
         loading: state.loading,
         error: state.error,
         deleteMovimiento,
-        addMovimiento
+        addMovimiento,
     }}>
         {children}
     </GlobalContext.Provider>)

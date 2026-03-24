@@ -1,8 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { GlobalContext } from '../context/GlobalState'
+import Movimiento from './Movimiento'
 
 const MovimientosLista = () => {
+  const {movimientos} = useContext(GlobalContext)
+
   return (
-    <div>MovimientosLista</div>
+    <>
+      <div>MovimientosLista</div>
+      <ul className="list">
+          {movimientos.map(movimiento =>(
+              <Movimiento key={movimiento._id} movimiento={movimiento} />
+          ))}
+      </ul>
+    </>
+
   )
 }
 

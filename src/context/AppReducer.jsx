@@ -16,7 +16,7 @@ const AppReducer = (state, action) => {
             return{
                 ...state,
                 loading: false,
-                movimientos: [action.payload, ...state]
+                movimientos: [action.payload, ...state.movimientos]
             }
         case 'ERROR_MOVIMIENTO':
             return {
